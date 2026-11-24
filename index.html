@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TeamUp prototype</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="phone" id="phone">
+
+  <!-- Status bar (same on every screen) -->
+  <div class="status">
+    <span>9:41</span>
+    <svg width="390" height="44" viewBox="0 0 390 44" fill="#0f172a">
+      <rect x="293.6" y="30"   width="3.2" height="4.3"  rx="1.1"/>
+      <rect x="298.6" y="28"   width="3.2" height="6.3"  rx="1.1"/>
+      <rect x="303.6" y="25.1" width="3.2" height="9.2"  rx="1.1"/>
+      <rect x="308.6" y="22.1" width="3.2" height="12.2" rx="1.1"/>
+      <g fill="none" stroke="#0f172a" stroke-width="1.8" stroke-linecap="round">
+        <path d="M320.7 26.7Q326 22.4 331.3 26.7"/>
+        <path d="M323.3 29.6Q326 26.4 328.9 29.6"/>
+      </g>
+      <circle cx="326.1" cy="32.3" r="1.45"/>
+      <rect x="337.2" y="22.6" width="20.9" height="11.4" rx="3.6" fill="none" stroke="#0f172a" stroke-opacity=".35"/>
+      <rect x="339" y="24.8" width="17.1" height="7" rx="1.4"/>
+      <rect x="359.1" y="26.3" width="1.6" height="4" rx=".8" opacity=".4"/>
+    </svg>
+  </div>
+
+  <!-- 01 · Welcome -->
+  <section class="screen" id="s01">
+    <div class="w-logo">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </svg>
+    </div>
+    <h1 class="w-title">TeamUp</h1>
+    <p class="w-text">Find classmates, project partners and study<br>groups across your university.</p>
+    <div class="w-avatars">
+      <span style="background:#7c3aed">LM</span><span style="background:#0d9488">JW</span><span style="background:#f59e0b">AK</span><span style="background:#0284c7">SR</span>
+    </div>
+    <p class="w-count">1,240 students from 38 programmes already on TeamUp</p>
+    <button class="btn" data-go="s02" style="top:697px">Create account</button>
+    <button class="btn link" data-go="s08" style="top:757px">I already have an account</button>
+  </section>
+
+  <!-- 02 · Sign up (TU-12) -->
+  <section class="screen" id="s02">
+    <button class="back" data-go="s01" aria-label="Back"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+    <h2 class="nav">Create account</h2>
+    <div class="steps"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+    <p class="step">STEP 1 OF 5</p>
+    <h1 class="title">Let’s get you started</h1>
+    <p class="lead">Use your university email so classmates can find<br>you.</p>
+    <label class="label" style="top:258px">University email</label>
+    <input class="field active" id="email" style="top:282px" value="lena.mueller@stud.fh-campus.de" autocomplete="off" spellcheck="false">
+    <label class="label" style="top:349px">Password</label>
+    <input class="field pw" style="top:372px" type="password" value="1234567890" autocomplete="new-password">
+    <p class="hint" style="top:430px">At least 8 characters</p>
+    <label class="check" style="top:464px"><input type="checkbox" checked><b><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></b>I agree to the Terms and Privacy Policy</label>
+    <div class="info" style="top:503px;height:77px">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+      Demo mode: TeamUp uses simulated accounts<br>for this prototype. No real university login is<br>needed.
+    </div>
+    <button class="btn" data-check="email" style="top:757px">Continue</button>
+  </section>
+
+  <!-- 03 · Sign up, error state (TU-12) -->
+  <section class="screen" id="s03">
+    <button class="back" data-go="s01" aria-label="Back"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+    <h2 class="nav">Create account</h2>
+    <div class="steps"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+    <p class="step">STEP 1 OF 5</p>
+    <h1 class="title">Let’s get you started</h1>
+    <p class="lead">Use your university email so classmates can find<br>you.</p>
+    <label class="label" style="top:259px">University email</label>
+    <input class="field error" id="email2" style="top:282px" value="lena.mueller@gmail.com" autocomplete="off" spellcheck="false">
+    <p class="hint error" style="top:341px">Use your university email, e.g. name@stud.fh-campus.de</p>
+    <label class="label" style="top:373px">Password</label>
+    <input class="field pw" style="top:396px" type="password" value="1234567890" autocomplete="new-password">
+    <p class="hint" style="top:454px">At least 8 characters</p>
+    <div class="info error" style="top:489px;height:60px">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+      This email can’t be used. TeamUp is only for<br>students with a university email.
+    </div>
+    <button class="btn" data-check="email2" style="top:757px">Continue</button>
+  </section>
+
+  <!-- 04 · Basic info (TU-14) -->
+  <section class="screen" id="s04">
+    <button class="back" data-go="s02" aria-label="Back"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+    <h2 class="nav">Your profile</h2>
+    <div class="steps"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
+    <p class="step">STEP 2 OF 5</p>
+    <h1 class="title">Tell others who you are</h1>
+    <div class="photo">LM</div>
+    <p class="photo-label">Profile photo</p>
+    <button class="photo-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>Upload photo</button>
+    <label class="label" style="top:307px">Full name</label>
+    <input class="field" style="top:331px" value="Lena Müller" autocomplete="off" spellcheck="false">
+    <label class="label" style="top:397px">Home university</label>
+    <input class="field" style="top:421px" value="FH Campus Dortmund" autocomplete="off" spellcheck="false">
+    <label class="label" style="top:487px">Short bio (optional)</label>
+    <input class="field" style="top:511px" placeholder="A sentence about you" maxlength="160" autocomplete="off">
+    <p class="hint" style="top:569px">Max. 160 characters</p>
+    <button class="btn" data-go="s05" style="top:757px">Continue</button>
+  </section>
+
+  <!-- 05 · Academic details (TU-14) -->
+  <section class="screen" id="s05">
+    <button class="back" data-go="s04" aria-label="Back"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+    <h2 class="nav">Your profile</h2>
+    <div class="steps"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+    <p class="step">STEP 3 OF 5</p>
+    <h1 class="title">Your studies</h1>
+    <p class="lead">Helps us match you with people in your courses.</p>
+    <label class="label" style="top:240px">Programme</label>
+    <input class="field" style="top:263px" value="M.Sc. Digital Transformation" autocomplete="off" spellcheck="false">
+    <label class="label" style="top:330px">Semester</label>
+    <input class="field" style="top:353px" value="2nd semester" autocomplete="off" spellcheck="false">
+    <label class="label" style="top:420px">Current courses</label>
+    <div class="chips" style="top:453px">
+      <button class="chip on">UX Research</button><button class="chip on">Project Management</button><button class="chip on">Data Analytics</button><button class="chip add">+ Add course</button>
+    </div>
+    <button class="btn" data-go="s06" style="top:757px">Continue</button>
+  </section>
+
+  <!-- 06 · Skills & interests (TU-15) -->
+  <section class="screen" id="s06">
+    <button class="back" data-go="s05" aria-label="Back"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+    <h2 class="nav">Your profile</h2>
+    <button class="skip" data-go="s07">Skip</button>
+    <div class="steps"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+    <p class="step">STEP 4 OF 5</p>
+    <h1 class="title">Skills &amp; interests</h1>
+    <p class="lead">Pick at least 3 skills. Others can find you by these.</p>
+    <div class="search" style="top:241px">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input placeholder="Search or add a skill" autocomplete="off" spellcheck="false">
+    </div>
+    <p class="label" style="top:304px">Skills</p>
+    <div class="chips" style="top:337px">
+      <button class="chip on">Figma</button><button class="chip on">Python</button><button class="chip on">User research</button><button class="chip on">Agile / Scrum</button><button class="chip">React</button><button class="chip">SQL</button><button class="chip">Data visualisation</button><button class="chip">Public speaking</button>
+    </div>
+    <p class="label" style="top:470px">Interests</p>
+    <div class="chips" style="top:503px">
+      <button class="chip on">Sustainability</button><button class="chip on">Startups</button><button class="chip">EdTech</button><button class="chip">AI ethics</button><button class="chip">Design systems</button>
+    </div>
+    <p class="hint" id="selected" style="top:595px">6 selected</p>
+    <button class="btn" data-go="s07" style="top:757px">Continue</button>
+  </section>
+
+  <!-- 07 · Visibility settings (TU-17) -->
+  <section class="screen" id="s07">
+    <button class="back" data-go="s06" aria-label="Back"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+    <h2 class="nav">Privacy</h2>
+    <button class="skip" data-go="s08">Skip</button>
+    <div class="steps"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+    <p class="step">STEP 5 OF 5</p>
+    <h1 class="title">Who can see what?</h1>
+    <p class="lead">Choose who sees each part of your profile. You can<br>change this anytime.</p>
+    <div class="card" style="top:261px;height:357px">
+      <div class="row"><div><b>Name &amp; photo</b><span>Lena Müller</span></div><button class="pill"><svg class="globe" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg><svg class="lock" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><em></em><svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button></div>
+      <div class="row"><div><b>Programme &amp; semester</b><span>M.Sc. Digital Transformation · 2…</span></div><button class="pill"><svg class="globe" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg><svg class="lock" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><em></em><svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button></div>
+      <div class="row"><div><b>Courses</b><span>3 courses</span></div><button class="pill"><svg class="globe" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg><svg class="lock" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><em></em><svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button></div>
+      <div class="row"><div><b>Skills &amp; interests</b><span>6 tags</span></div><button class="pill"><svg class="globe" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg><svg class="lock" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><em></em><svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button></div>
+      <div class="row"><div><b>Email</b><span>lena.mueller@stud…</span></div><button class="pill private"><svg class="globe" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg><svg class="lock" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><em></em><svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button></div>
+    </div>
+    <p class="hint" style="top:634px">Everyone = all TeamUp students · University = FH<br>Campus Dortmund only · Only me = hidden</p>
+    <button class="btn" data-go="s08" style="top:697px">Finish setup</button>
+    <button class="btn outline" style="top:757px">Preview my profile</button>
+  </section>
+
+  <!-- 08 · Discover home -->
+  <section class="screen" id="s08" data-tab="discover">
+    <div class="scroll">
+      <p class="hi">Good morning</p>
+      <h1 class="hi-name">Lena</h1>
+      <button class="bell" aria-label="Notifications"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></button>
+      <div class="search" style="top:126px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input placeholder="Search students, courses, skills" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="banner"><b>Your profile is live</b><span>Classmates in your 3 courses can now find you.</span></div>
+      <h2 class="section" style="top:288px">Suggested for you</h2><button class="see" style="top:289px">See all</button>
+      <div class="people" style="top:330px">
+        <div class="person">
+          <span class="av" style="background:#0d9488">JW</span>
+          <b>Jonas Weber</b><small>M.Sc. Data Science · 3rd semester</small><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          <div class="tags"><i class="tag">Python</i><i class="tag">Data viz</i><i class="tag">Analytics</i></div>
+        </div>
+        <div class="person">
+          <span class="av" style="background:#f59e0b">AK</span>
+          <b>Aylin Kaya</b><small>B.Sc. Business Informatics · 5th se…</small><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          <div class="tags"><i class="tag">Figma</i><i class="tag">UX Research</i><i class="tag">Agile</i></div>
+        </div>
+      </div>
+      <h2 class="section" style="top:622px">Groups in your courses</h2><button class="see" style="top:623px">See all</button>
+      <div class="group" style="top:663px">
+        <b>Analytics Project Team</b><em class="badge">Approval</em>
+        <p>Data Analytics · Semester project on campus<br>mobility data</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tab bar (shown on screens that have data-tab) -->
+  <nav class="tabs" id="tabs">
+    <button data-name="discover" data-go="s08"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Discover</button>
+    <button data-name="groups"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Groups</button>
+    <button data-name="chats"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Chats</button>
+    <button data-name="profile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21a8 7 0 0 1 16 0"/><circle cx="12" cy="8" r="4"/></svg>Profile</button>
+  </nav>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
